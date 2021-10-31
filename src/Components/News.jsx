@@ -48,10 +48,12 @@ const Noticias = ({ simplified }) => {
             <Card hoverable className="news-card">
               <div className="news-image-container">
                 <Title className="news-title" level={5}>
-                  {news.name}
+                  {news.name > 10
+                    ? `${news.name.substring(0, 10)}...`
+                    : news.name}
                 </Title>
                 <img
-                  style={{ overflow: "hidden" }}
+                  style={{ width: "150px", height: "100px" }}
                   src={news?.image?.thumbnail?.contentUrl || demoImage}
                   alt={news.name}
                 />

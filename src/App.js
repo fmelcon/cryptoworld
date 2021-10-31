@@ -1,18 +1,61 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
-import { Navbar } from "./Components";
+import {
+  Navbar,
+  CryptoDetails,
+  News,
+  Homepage,
+  Exchanges,
+  Cryptocurrencies,
+} from "./Components";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <div className="navbar">
-        <Navbar />
-      </div>
-      <div className="main"></div>
-      <div className="footer"></div>
+const App = () => (
+  <div className="app">
+    <div className="navbar">
+      <Navbar />
     </div>
-  );
-}
+    <div className="main">
+      <Layout>
+        <div className="routes">
+          <Switch>
+            <Route exact path="/">
+              <Homepage />
+            </Route>
+            <Route exact path="/exchanges">
+              <Exchanges />
+            </Route>
+            <Route exact path="/cryptocurrencies">
+              <Cryptocurrencies />
+            </Route>
+            <Route exact path="/crypto/:coinId">
+              <CryptoDetails />
+            </Route>
+            <Route exact path="/news">
+              <News />
+            </Route>
+          </Switch>
+        </div>
+      </Layout>
+      <div className="footer">
+        <Typography.Title
+          level={3}
+          style={{ color: "white", textAlign: "center" }}
+        >
+          <Link to="/" style={{ color: "white", textAlign: "center" }}>
+            Crypto World
+          </Link>{" "}
+          <br />
+        </Typography.Title>
+        <Space>
+          <Link to="/">Home</Link>
+          <Link to="/exchanges">Exchanges</Link>
+          <Link to="/news">News</Link>
+        </Space>
+      </div>
+    </div>
+  </div>
+);
 
 export default App;

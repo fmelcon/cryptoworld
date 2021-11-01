@@ -76,6 +76,10 @@ a:hover {
   background-color: #0a1c1c !important;
 }
 
+.ant-col-6 {
+  font-weight: 600;
+}
+
 .ant-card {
   min-height: 15rem;
 }

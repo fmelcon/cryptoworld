@@ -27,7 +27,7 @@ const { Option } = Select;
 
 const CryptoDetails = () => {
   const { coinId } = useParams();
-  const [timeperiod, setTimeperiod] = useState("7d");
+  const [timeperiod, setTimeperiod] = useState("24h");
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
   const { data: coinHistory } = useGetCryptoHistoryQuery({
     coinId,
@@ -101,7 +101,7 @@ const CryptoDetails = () => {
     <Col className="coin-detail-container">
       <Col className="coin-heading-container">
         <Title level={2} className="coin-name">
-          {data?.data?.coin.name} ({data?.data?.coin.slug}) Price
+          💲 {data?.data?.coin.name} ({data?.data?.coin.slug}) Price 💲
         </Title>
         <p>
           {cryptoDetails.name} live price in US Dollar (USD). View value
@@ -109,7 +109,7 @@ const CryptoDetails = () => {
         </p>
       </Col>
       <Select
-        defaultValue="7d"
+        defaultValue="24h"
         className="select-timeperiod"
         placeholder="Select Timeperiod"
         onChange={(value) => setTimeperiod(value)}

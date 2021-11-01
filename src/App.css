@@ -30,7 +30,6 @@ a:hover {
   background-image: url("./images/fondo-nav.jpg") !important;
   background-repeat: repeat;
   background-size: cover;
-
   background-position: left;
   flex: 0.2;
 }
@@ -71,6 +70,14 @@ a:hover {
   font-size: 1.2rem !important;
   background-color: var(--bgSecondary) !important;
   border: none !important;
+}
+
+.ant-menu.ant-menu-dark {
+  background-color: #0a1c1c !important;
+}
+
+.ant-card {
+  min-height: 15rem;
 }
 
 .ant-row {
@@ -119,6 +126,10 @@ a:hover {
   }
 
   .nav-container {
+    background-image: url("./images/fondo-nav.jpg") !important;
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: bottom;
     height: 8vh;
     position: fixed;
     width: 100%;
